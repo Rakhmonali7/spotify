@@ -19,26 +19,62 @@ main {
 main {
   width: calc(100% - 240px);
   height: 100%;
-  background-color: cornflowerblue;
 }
 header {
   width: 100%;
-  background-color: dimgray;
   height: 52px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13.9px;
+  line-height: 20px;
+  color: #6b7280;
+}
+
+header div:last-child {
+  align-self: flex-end;
 }
 main .wrapper {
   width: 100%;
   height: 272px;
-  background-color: gold;
+
   display: flex;
+  flex-wrap: wrap;
   gap: 45px;
 }
 main .wrapper .card {
   width: 188px;
   height: 272px;
-  background-color: azure;
+  cursor: pointer;
+  padding: 16px;
 }
-
+main .wrapper .card h2 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #111827;
+  margin: 16px 0 4px 0;
+}
+main .wrapper .card p {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13.9px;
+  line-height: 20px;
+  color: #6b7280;
+}
+main .wrapper .card:hover {
+  background-color: #f3f4f6;
+  box-shadow: 6px 6px 30px grey;
+}
+main .wrapper .card img:hover {
+  width: 160px;
+  height: 160px;
+}
 /* Aside */
 
 aside {
@@ -46,6 +82,32 @@ aside {
   height: 100%;
   padding: 24px 8px 8px 8px;
   background-color: #f3f4f6;
+}
+aside #ham {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+@media (max-width: 700px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+  section aside {
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+  }
+  aside #ham {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+  section main {
+    width: 100%;
+    height: fit-content;
+  }
 }
 
 aside .logo {
@@ -104,7 +166,13 @@ aside .group3 div:first-child {
   height: 20px;
   margin-left: calc(24px - 8px);
 }
-aside .group1 div:first-child:hover {
+aside .group1 div:hover {
+  background-color: white;
+}
+aside .group2 div:hover {
+  background-color: white;
+}
+aside .group3 div:hover {
   background-color: white;
 }
 aside .group3 div:last-child {
@@ -118,3 +186,5 @@ aside .group3 div:last-child {
 aside div p:hover {
   color: #10b981;
 }
+
+/* Main Header */
